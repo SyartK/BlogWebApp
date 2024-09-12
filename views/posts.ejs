@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog Posts</title>
+    <link rel="stylesheet" type="text/css" href="/styles/main.css" />
+  </head>
+  <body>
+    <h1>Blog Posts</h1>
+    <% posts.forEach(post => { %>
+    <div class="post">
+      <h2><%= post.title %></h2>
+      <p><%= post.content %></p>
+      <form action="/posts/<%= post.id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+    </div>
+    <% }) %>
+    <div class="actions">
+      <a href="/" class="btn">Create a New Post</a>
+    </div>
+  </body>
+</html>
